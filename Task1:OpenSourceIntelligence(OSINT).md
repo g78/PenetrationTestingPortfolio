@@ -54,6 +54,7 @@ The next three examples using dig are a basic attempts that should fail unless t
 
 
 Dig can also be used to undertake `Incremental` Zone Transfers
+
 **Command:** *dig domainName IXFR*
 
 
