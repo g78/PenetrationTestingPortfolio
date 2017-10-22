@@ -122,6 +122,7 @@ affiliate.target.com 98.129.229.242
 [ip]            [subdomain]
 64.75.15.140    coupons.target.com
 87.237.22.192   investors.target.com
+
 87.237.22.178   investors.target.com
 98.129.229.242  affiliate.target.com
 184.87.187.104  www.target.com
@@ -129,3 +130,72 @@ affiliate.target.com 98.129.229.242
 104.86.110.34   style.target.com
 ```
 
+To run the Bruteforce Zone Transfer the tool `fierce` is a excellent
+**Command:** *fierce -dns domainName*
+```
+root@kali:~/toolz# fierce -dns target.com
+DNS Servers for target.com:
+	ns4-65.akam.net
+	ns7-64.akam.net
+	ns1-168.akam.net
+	ns5-65.akam.net
+	tezttsdcx03p.extdns.target.com
+
+Trying zone transfer first...
+	Testing ns4-65.akam.net
+		Request timed out or transfer not allowed.
+	Testing ns7-64.akam.net
+		Request timed out or transfer not allowed.
+	Testing ns1-168.akam.net
+		Request timed out or transfer not allowed.
+	Testing ns5-65.akam.net
+		Request timed out or transfer not allowed.
+unresolvable name: tezttsdcx03p.extdns.target.com at /usr/bin/fierce line 226.
+	Testing tezttsdcx03p.extdns.target.com
+		Request timed out or transfer not allowed.
+unresolvable name: tezttsdcx03p.extdns.target.com at /usr/bin/fierce line 236.
+
+Unsuccessful in zone transfer (it was worth a shot)
+Okay, trying the good old fashioned way... brute force
+
+Checking for wildcard DNS...
+Nope. Good.
+Now performing 2280 test(s)...
+130.211.24.197	ads.target.com
+161.225.136.32	auction.target.com
+68.233.76.200	careers.target.com
+161.225.41.30	chicago.target.com
+206.132.3.45	email.target.com
+161.225.130.72	images.target.com
+161.225.130.130	ns3.target.com
+161.225.136.136	ns4.target.com
+161.225.130.150	ns5.target.com
+161.225.136.53	owa.target.com
+192.237.143.137	security.target.com
+206.132.3.45	services.target.com
+161.225.130.163	shop.target.com
+161.225.142.27	vc.target.com
+161.225.195.239	wap.target.com
+161.225.195.239	wireless.target.com
+207.171.181.21	www2.target.com
+
+Subnets found (may want to probe here using nmap or unicornscan):
+	130.211.24.0-255 : 1 hostnames found.
+	161.225.130.0-255 : 4 hostnames found.
+	161.225.136.0-255 : 3 hostnames found.
+	161.225.142.0-255 : 1 hostnames found.
+	161.225.195.0-255 : 2 hostnames found.
+	161.225.41.0-255 : 1 hostnames found.
+	192.237.143.0-255 : 1 hostnames found.
+	206.132.3.0-255 : 2 hostnames found.
+	207.171.181.0-255 : 1 hostnames found.
+	68.233.76.0-255 : 1 hostnames found.
+
+Done with Fierce scan: http://ha.ckers.org/fierce/
+Found 17 entries.
+
+Have a nice day.
+
+```
+
+**Command:** **
