@@ -81,7 +81,7 @@ When you need ideas for subdomains then you can always try Google!  The script f
 
 **Command:** *python gxfr.py domainName --dns-lookup -v*
 
-'''
+```
 root@kali:~/toolz# python gxfr.py target.com --dns-lookup -v
 [-] domain: target.com
 [-] user-agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; FDM; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 1.1.4322)
@@ -122,4 +122,5 @@ affiliate.target.com 98.129.229.242
 184.87.187.104  www.target.com
 104.86.110.80   style.target.com
 104.86.110.34   style.target.com
-'''
+```
+
