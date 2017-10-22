@@ -36,32 +36,40 @@ An NS records is used to delgate a subdomain to a set of name servers.  When a d
 ## Address - A Records
 
 **Command:** *dig domainName A*
+
 ![dig_a](https://user-images.githubusercontent.com/8903296/31866067-2b60a6a2-b771-11e7-9e12-7aba5be4008f.PNG)
 
 **Command:** *dig domainName A +noall +answer*
+
 ![dig_a_noall_answer](https://user-images.githubusercontent.com/8903296/31866071-44c3a05e-b771-11e7-8b14-6f4685ca9625.PNG)
 
 **Command:** *dig domainName A +short*
+
 ![dig_a_short](https://user-images.githubusercontent.com/8903296/31866073-55c291b2-b771-11e7-8817-dafcf487b4f9.PNG)
 
 ## Pointer - PTR Records
 **Command:** *dig domainName PTR*
+
 ![dig_ptr](https://user-images.githubusercontent.com/8903296/31866078-744ca230-b771-11e7-8d3d-b9fafc290251.PNG)
 
 ## Attempting a Zone Transfer
 The next three examples using dig are a basic attempts that should fail unless the DNS has been badly misconfigured
 **Command:** *dig domainName AXFR*
+
 ![dig_axfr](https://user-images.githubusercontent.com/8903296/31866083-8a3a0f74-b771-11e7-9b47-5ba6a68d281b.PNG)
 
 **Command:** *dig domainName AXFR +noall +answer*
+
 ![dig_axfr_noall_answer](https://user-images.githubusercontent.com/8903296/31866091-a8cb7752-b771-11e7-8c54-b7fc94b665eb.PNG)
 
 Dig can also be used to undertake `Incremental` Zone Transfers
 
 **Command:** *dig domainName IXFR*
+
 ![dig_ixfr](https://user-images.githubusercontent.com/8903296/31866095-bc577faa-b771-11e7-8417-d0aab25150e8.PNG)
 
 ### Bruteforce Zone Transfers
 When Zone Transfers do not work the next technique to try is a DNS Bruteforce which is performed by appending names to a domain name
 
 **Command:** *perl blindcrawl.pl -d domainName*
+![blindcrawl_zt](https://user-images.githubusercontent.com/8903296/31866181-9e3e853e-b773-11e7-9972-61b9a5a2f35a.PNG)
