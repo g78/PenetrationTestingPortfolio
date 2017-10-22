@@ -13,4 +13,6 @@ Now we have the Authority IP addresses we can use `dig` to query the MX records.
 **Command:** *dig domainName MX +noall +answer*
 ![dig_mx_noall_answer](https://user-images.githubusercontent.com/8903296/31865641-f6a79f58-b769-11e7-8cc5-5daa3da3ccc3.PNG)
 
-**Command:** *dign domainName MX +short*
+**Command:** *dig domainName MX +short*
+![dig_mx_short](https://user-images.githubusercontent.com/8903296/31865683-8b021d36-b76a-11e7-8eb2-c118c8aa18ac.PNG)
+
