@@ -78,7 +78,9 @@ When Zone Transfers do not work the next technique to try is a DNS Bruteforce wh
 ![blindcrawl_zt](https://user-images.githubusercontent.com/8903296/31866181-9e3e853e-b773-11e7-9972-61b9a5a2f35a.PNG)
 
 When you need ideas for subdomains then you can always try Google!  The script for the task is gxfr.py
+
 **Command:** *python gxfr.py domainName --dns-lookup -v*
+
 '''
 root@kali:~/toolz# python gxfr.py target.com --dns-lookup -v
 [-] domain: target.com
@@ -120,5 +122,4 @@ affiliate.target.com 98.129.229.242
 184.87.187.104  www.target.com
 104.86.110.80   style.target.com
 104.86.110.34   style.target.com
-
 '''
