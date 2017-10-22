@@ -19,6 +19,7 @@ Now we have the Authority IP addresses we can use `dig` to query the MX records.
 
 ![dig_mx_short](https://user-images.githubusercontent.com/8903296/31865683-8b021d36-b76a-11e7-8eb2-c118c8aa18ac.PNG)
 
+
 The results provided by our DNS searches are consistent meaning that we can add the results to our matrix and move onto querying the NS records. 
 
 ## Name Server - NS Records
@@ -31,6 +32,7 @@ An NS records is used to delgate a subdomain to a set of name servers.  When a d
 ![dig_ns_noall_answer](https://user-images.githubusercontent.com/8903296/31866049-ef2f0fd4-b770-11e7-9461-e5dd6f09023c.PNG)
 
 **Command:** *dig domainName NS +short*
+
 ![dig_ns_short](https://user-images.githubusercontent.com/8903296/31866063-124292ca-b771-11e7-8b73-24cff98a5960.PNG)
 
 ## Address - A Records
@@ -72,4 +74,5 @@ Dig can also be used to undertake `Incremental` Zone Transfers
 When Zone Transfers do not work the next technique to try is a DNS Bruteforce which is performed by appending names to a domain name
 
 **Command:** *perl blindcrawl.pl -d domainName*
+
 ![blindcrawl_zt](https://user-images.githubusercontent.com/8903296/31866181-9e3e853e-b773-11e7-9972-61b9a5a2f35a.PNG)
