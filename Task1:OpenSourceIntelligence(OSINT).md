@@ -7,7 +7,10 @@ The first step in enumerating a target network is via `DNS`.  To help with the h
 
 Now we have the Authority IP addresses we can use `dig` to query the MX records.  In many examples a company will hosts its webserver with a hosting company and run it's own mail functions.  Comparing the Authority and MX records can show discrepencies allowing you to zone in on the target networks real IP range
 
-**Command: ** *dig domainName MX*
+**Command:** *dig domainName MX*
 ![dig_mx](https://user-images.githubusercontent.com/8903296/31865599-32a2d35c-b769-11e7-8ace-88c62a3fe5a8.PNG)
 
-**Command: ** *dig domainName MX +noall +answer*
+**Command:** *dig domainName MX +noall +answer*
+![dig_mx_noall_answer](https://user-images.githubusercontent.com/8903296/31865641-f6a79f58-b769-11e7-8cc5-5daa3da3ccc3.PNG)
+
+**Command:** *dign domainName MX +short*
