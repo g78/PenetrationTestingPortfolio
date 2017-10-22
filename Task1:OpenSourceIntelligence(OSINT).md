@@ -43,7 +43,7 @@ An NS records is used to delgate a subdomain to a set of name servers.  When a d
 **Command:** *dig domainName +short*
 
 ## Pointer - PTR Records
-**Command:** * dig domainName PTR*
+**Command:** *dig domainName PTR*
 
 ## Attempting a Zone Transfer
 The next three examples using dig are a basic attempts that should fail unless the DNS has been badly misconfigured
