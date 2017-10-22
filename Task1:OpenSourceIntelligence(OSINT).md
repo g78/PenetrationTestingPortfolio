@@ -26,6 +26,7 @@ The results provided by our DNS searches are consistent meaning that we can add 
 An NS records is used to delgate a subdomain to a set of name servers.  When a domain is delegated to DNS the Top Level Domain (TLD) authorities place NS (Name Server) records for your domain in the TLD Name Servers.
 
 **Command:** *dig domainName NS*
+
 ![dig_ns](https://user-images.githubusercontent.com/8903296/31865812-b5979272-b76c-11e7-8522-cc9caccd6478.PNG)
 
 **Command:** *dig domaninName NS +noall +answer*
@@ -71,13 +72,17 @@ Dig can also be used to undertake `Incremental` Zone Transfers
 ![dig_ixfr](https://user-images.githubusercontent.com/8903296/31866095-bc577faa-b771-11e7-8417-d0aab25150e8.PNG)
 
 ### Bruteforce Zone Transfers
-When Zone Transfers do not work the next technique to try is a DNS Bruteforce which is performed by appending names to a domain name
+When Zone Transfers do not work the next technique to try is a DNS Bruteforce which is performed by appending names to a domain name. 
+
+Lets find domain names using two tools - blindcrawl.pl and gxfr.py
+
+Lets see if our target has any sub domains from a list of common names:
 
 **Command:** *perl blindcrawl.pl -d domainName*
 
 ![blindcrawl_zt](https://user-images.githubusercontent.com/8903296/31866181-9e3e853e-b773-11e7-9972-61b9a5a2f35a.PNG)
 
-When you need ideas for subdomains then you can always try Google!  The script for the task is gxfr.py
+When you need ideas for subdomains then you can always try Google!  The script for the task is gxfr.py:
 
 **Command:** *python gxfr.py domainName --dns-lookup -v*
 
