@@ -25,4 +25,7 @@ The results provided by our DNS searches are consistent meaning that we can add 
 An NS records is used to delgate a subdomain to a set of name servers.  When a domain is delegated to DNS the Top Level Domain (TLD) authorities place NS (Name Server) records for your domain in the TLD Name Servers.
 
 **Command:** *dig domainName NS*
+![dig_ns](https://user-images.githubusercontent.com/8903296/31865812-b5979272-b76c-11e7-8522-cc9caccd6478.PNG)
+
+
 
