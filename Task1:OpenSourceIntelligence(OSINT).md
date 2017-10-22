@@ -76,3 +76,49 @@ When Zone Transfers do not work the next technique to try is a DNS Bruteforce wh
 **Command:** *perl blindcrawl.pl -d domainName*
 
 ![blindcrawl_zt](https://user-images.githubusercontent.com/8903296/31866181-9e3e853e-b773-11e7-9972-61b9a5a2f35a.PNG)
+
+When you need ideas for subdomains then you can always try Google!  The script for the task is gxfr.py
+**Command:** *python gxfr.py domainName --dns-lookup -v*
+'''
+root@kali:~/toolz# python gxfr.py target.com --dns-lookup -v
+[-] domain: target.com
+[-] user-agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; FDM; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 1.1.4322)
+[-] querying search engine, please wait...
+[+] using query: https://www.google.com/m/search?q=site%3Atarget.com&start=0...
+[!] subdomain found: www
+[!] subdomain found: style
+[!] subdomain found: investors
+[!] subdomain found: coupons
+[+] sleeping to avoid lock-out...
+[+] using query: https://www.google.com/m/search?q=site%3Atarget.com+-site%3Awww.target.com+-site%3Astyle.target.com+-site%3Ainvestors.target.com+-site%3Acoupons.target.com&start=0...
+[!] subdomain found: affiliate
+[+] sleeping to avoid lock-out...
+[+] using query: https://www.google.com/m/search?q=site%3Atarget.com+-site%3Awww.target.com+-site%3Astyle.target.com+-site%3Ainvestors.target.com+-site%3Acoupons.target.com+-site%3Aaffiliate.target.com&start=0...
+[-] all available subdomains found...
+[-] successful queries made: 3
+[+] final query string: https://www.google.com/m/search?q=site%3Atarget.com+-site%3Awww.target.com+-site%3Astyle.target.com+-site%3Ainvestors.target.com+-site%3Acoupons.target.com+-site%3Aaffiliate.target.com&start=0
+ 
+[subdomains] - 5
+www.target.com 184.87.187.104
+style.target.com 104.86.110.34,104.86.110.80
+investors.target.com 87.237.22.178,87.237.22.192
+coupons.target.com 64.75.15.140
+affiliate.target.com 98.129.229.242
+ 
+[-] querying dns, please wait...
+[+] querying dns for www.target.com...
+[+] querying dns for style.target.com...
+[+] querying dns for investors.target.com...
+[+] querying dns for coupons.target.com...
+[+] querying dns for affiliate.target.com...
+ 
+[ip]            [subdomain]
+64.75.15.140    coupons.target.com
+87.237.22.192   investors.target.com
+87.237.22.178   investors.target.com
+98.129.229.242  affiliate.target.com
+184.87.187.104  www.target.com
+104.86.110.80   style.target.com
+104.86.110.34   style.target.com
+
+'''
