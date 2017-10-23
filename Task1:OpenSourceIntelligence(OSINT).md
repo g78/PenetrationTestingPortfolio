@@ -198,6 +198,7 @@ Found 17 entries.
 Have a nice day.
 
 ```
+Using each of the IP address ranges use fierce to identify all live hosts and thier IP addresses on the range
 
 **Command:** *fierce -range 161.255.130.0-255 -dnsserver 161.255.136.130*
 
@@ -205,11 +206,12 @@ Have a nice day.
 
 ```
 
-###Getting a List of Machine IP addresses from an Identified IP Range
+### Getting a List of Machine IP addresses from an Identified IP Range
 
 Using the results we have acquired from identifying DNS Servers then sub domains leading us to a number of IP ranges we can use `NMAP` to identify all IP addresses that have a live host.
 
 **Command:** *nmap -sL 161.255.130.0-255*
+
 ```
 root@kali:~# nmap -sL 161.255.130.0-255
 
@@ -400,8 +402,7 @@ Nmap scan report for 161-255-130-182.genericrev.telcel.net.ve (161.255.130.182)
 Nmap scan report for 161-255-130-183.genericrev.telcel.net.ve (161.255.130.183)
 Nmap scan report for 161-255-130-184.genericrev.telcel.net.ve (161.255.130.184)
 Nmap scan report for 161-255-130-185.genericrev.telcel.net.ve (161.255.130.185)
-Nmap scan report for 161-255-130-186.genericrev.telcel.net.ve (161.255.130.186)
-Nmap scan report for 161-255-130-187.genericrev.telcel.net.ve (161.255.130.187)
+Nmap scan report for 161-255-130-186.genericrev.telcel.net.ve (161.255.130.186)Nmap scan report for 161-255-130-187.genericrev.telcel.net.ve (161.255.130.187)
 Nmap scan report for 161-255-130-188.genericrev.telcel.net.ve (161.255.130.188)
 Nmap scan report for 161-255-130-189.genericrev.telcel.net.ve (161.255.130.189)
 Nmap scan report for 161-255-130-190.genericrev.telcel.net.ve (161.255.130.190)
@@ -475,5 +476,5 @@ Nmap done: 256 IP addresses (0 hosts up) scanned in 37.39 seconds
 
 ```
 
-#Automating the Process
+# Automating the Process
 Instead of running these tasks step by step manually it is good form to attempt to automate parts of the OSINT process.  I've included below a python script that runs each of the steps and parses the results preparing them for the next auomtation step in the process.
