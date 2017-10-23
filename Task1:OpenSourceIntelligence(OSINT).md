@@ -131,6 +131,7 @@ affiliate.target.com 98.129.229.242
 ```
 
 To run the Bruteforce Zone Transfer the tool `fierce` is a excellent
+
 **Command:** *fierce -dns domainName*
 ```
 root@kali:~/toolz# fierce -dns target.com
@@ -198,4 +199,4 @@ Have a nice day.
 
 ```
 
-**Command:** **
+**Command:** *fierce -range 161.255.130.0-255 -dnsserver 161.255.136.130*
