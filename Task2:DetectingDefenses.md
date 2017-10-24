@@ -229,6 +229,35 @@ successful requests: 31 hits (100.00%)
 header fingerprint: bc9d8597424d60bfd45ce8bd193ab64c5ffaabc9
 
 ```
+Another good tool to identify Load Balancers is ldb.  The tool looks at IP addresses, date / timestamps and the length of returned http headers to determine its results.
+
+**Command:** *lbd domaninName
+
+```
+root@kali:~# /usr/bin/lbd target.com
+
+lbd - load balancing detector 0.4 - Checks if a given domain uses load-balancing.
+                                    Written by Stefan Behte (http://ge.mine.nu)
+                                    Proof-of-concept! Might give false positives.
+
+Checking for DNS-Loadbalancing: FOUND
+target.com has address 23.205.220.27
+target.com has address 23.205.220.64
+
+Checking for HTTP-Loadbalancing [Server]: 
+ AkamaiGHost
+ NOT FOUND
+
+Checking for HTTP-Loadbalancing [Date]: 18:59:43, 18:59:43, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:50, 18:59:50, 18:59:50, 18:59:50, 18:59:50, NOT FOUND
+
+Checking for HTTP-Loadbalancing [Diff]: FOUND
+< Content-Length: 254
+> Content-Length: 255
+
+target.com does Load-balancing. Found via Methods: DNS HTTP[Diff]
+
+```
+
 ### IPS: Active Filter Detection
 Active filter detection is achieved by sending packets that contain the strings found in real life IDS virus signatures.  The packet being sent to the target doesn't contain malicious content instead in contains the string found in the signature.  What we are looking to evaluate is the response, should the target respond with a RESET packet or blocks the source IP address then it is a strong indication that the host is being protected by an IPS.
 
