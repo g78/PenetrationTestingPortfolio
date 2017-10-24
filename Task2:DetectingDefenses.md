@@ -229,3 +229,9 @@ successful requests: 31 hits (100.00%)
 header fingerprint: bc9d8597424d60bfd45ce8bd193ab64c5ffaabc9
 
 ```
+### IPS: Active Filter Detection
+Active filter detection is achieved by sending packets that contain the strings found in real life IDS virus signatures.  The packet being sent to the target doesn't contain malicious content instead in contains the string found in the signature.  What we are looking to evaluate is the response, should the target respond with a RESET packet or blocks the source IP address then it is a strong indication that the host is being protected by an IPS.
+
+```
+
+```
