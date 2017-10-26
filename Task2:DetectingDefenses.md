@@ -264,5 +264,27 @@ Active filter detection is achieved by sending packets that contain the strings 
 One of the many really good features of w3af is that is evaluates the target for active filter detection using its Infrastructure Plugin afd.  After configuring the scan the results are show below
 
 ```
+w3af>>> start
+The remote network has an active filter. IMPORTANT: The result of all the other plugins will be inaccurate, web applications could be vulnerable but "protected" by the active filter.This information was found in the request with id 1.
+The following URLs were filtered:
+- https://intl.target.com/?YXcGUQl=id;uname -a
+- https://intl.target.com/?YXcGUQl=<? passthru("id");?>
+- https://intl.target.com/?YXcGUQl=../../../../etc/passwd
+- https://intl.target.com/?YXcGUQl=./../../../etc/motdhtml
+- https://intl.target.com/?YXcGUQl=../../WINNT/system32/cmd.exe?dir+c:\
+- https://intl.target.com/?YXcGUQl=../../../../bin/chgrp nobody /etc/shadow|
+The following URLs passed undetected by the filter:
+- https://intl.target.com/?YXcGUQl=SELECT TOP 1 name FROM sysusers
+- https://intl.target.com/?YXcGUQl=exec xp_cmdshell dir
+- https://intl.target.com/?YXcGUQl=exec master..xp_cmdshell dir
+- https://intl.target.com/?YXcGUQl=ps -aux;
+- https://intl.target.com/?YXcGUQl=type+c:\winnt\repair\sam._
+Found 1 URLs and 1 different injections points.
+The URL list is:
+- https://intl.target.com/
+The list of fuzzable requests is:
+- Method: GET | https://intl.target.com/
+Scan finished in 6 seconds.
+Stopping the core...
 
 ```
