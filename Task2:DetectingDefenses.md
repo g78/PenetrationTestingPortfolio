@@ -247,7 +247,7 @@ target.com has address 23.205.220.64
 Checking for HTTP-Loadbalancing [Server]: 
  AkamaiGHost
  NOT FOUND
-
+`
 Checking for HTTP-Loadbalancing [Date]: 18:59:43, 18:59:43, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:44, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:45, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:46, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:47, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:48, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:49, 18:59:50, 18:59:50, 18:59:50, 18:59:50, 18:59:50, NOT FOUND
 
 Checking for HTTP-Loadbalancing [Diff]: FOUND
@@ -288,3 +288,76 @@ Scan finished in 6 seconds.
 Stopping the core...
 
 ```
+## WAF: Web Application Firewalls
+To test if the target is behind a web application firewall wafwoof.  Not only does detection take place but wafwoof on occassion is able to identify the WAF being used
+**Command:** *wafw00f -a domainName -v*
+```
+root@kali:~# wafw00f -a https://intl.target.com
+
+                                 ^     ^
+        _   __  _   ____ _   __  _    _   ____
+       ///7/ /.' \ / __////7/ /,' \ ,' \ / __/
+      | V V // o // _/ | V V // 0 // 0 // _/
+      |_n_,'/_n_//_/   |_n_,' \_,' \_,'/_/
+                                <
+                                 ...'
+
+    WAFW00F - Web Application Firewall Detection Tool
+
+    By Sandro Gauci && Wendel G. Henrique
+
+Checking https://intl.target.com
+Generic Detection results:
+No WAF detected by the generic detection
+Number of requests: 13
+```
+
+```
+root@kali:~# wafw00f -a http://microsoft.com
+
+                                 ^     ^
+        _   __  _   ____ _   __  _    _   ____
+       ///7/ /.' \ / __////7/ /,' \ ,' \ / __/
+      | V V // o // _/ | V V // 0 // 0 // _/
+      |_n_,'/_n_//_/   |_n_,' \_,' \_,'/_/
+                                <
+                                 ...'
+
+    WAFW00F - Web Application Firewall Detection Tool
+
+    By Sandro Gauci && Wendel G. Henrique
+
+Checking http://microsoft.com
+Generic Detection results:
+The site http://microsoft.com seems to be behind a WAF or some sort of security solution
+Reason: The server returned a different response code when a string trigged the blacklist.
+Normal response code is "400", while the response code to an attack is "301"
+Number of requests: 13
+
+```
+
+```
+root@kali:~# wafw00f -a http://target.com
+
+                                 ^     ^
+        _   __  _   ____ _   __  _    _   ____
+       ///7/ /.' \ / __////7/ /,' \ ,' \ / __/
+      | V V // o // _/ | V V // 0 // 0 // _/
+      |_n_,'/_n_//_/   |_n_,' \_,' \_,'/_/
+                                <
+                                 ...'
+
+    WAFW00F - Web Application Firewall Detection Tool
+
+    By Sandro Gauci && Wendel G. Henrique
+
+Checking http://target.com
+The site http://target.com is behind a F5 BIG-IP APM
+Generic Detection results:
+The site http://target.com seems to be behind a WAF or some sort of security solution
+Reason: The server header is different when an attack is detected.
+The server header for a normal response is "BigIP", while the server header a response to an attack is "AkamaiGHost.",
+Number of requests: 12
+
+```
+
