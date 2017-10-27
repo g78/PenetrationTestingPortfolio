@@ -361,3 +361,5 @@ Number of requests: 12
 
 ```
 
+BurpSuite has a plug in that is able to detect Web Application Firewalls works in the background while the tool is undertaking a scan.  The scan output is found in the Target tab as an advistory providing the severity and confidence of the discovery.
+![image](https://user-images.githubusercontent.com/8903296/32120925-5d53475c-bb52-11e7-88cb-209810b56494.png)
